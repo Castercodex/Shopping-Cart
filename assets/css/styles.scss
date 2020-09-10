@@ -1,0 +1,143 @@
+@import "body";
+@import "animations";
+@import "responsiveness";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(214, 214, 214);
+  &:hover {
+    background-color: #444444;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+i {
+  pointer-events: none;
+  font-size: 23px;
+}
+
+.list {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  height: 80vh;
+  top: -1000px;
+  overflow-y: auto;
+  margin: auto;
+  z-index: 1;
+  transition: 0.5s ease;
+
+  opacity: 0;
+  &.show {
+    top: 80px;
+    animation: list 0.5s linear;
+    opacity: 1;
+  }
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    &:hover {
+      background-color: rgb(0, 132, 255);
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(223, 223, 223);
+  }
+  .proceed {
+    position: sticky;
+    cursor: pointer;
+    top: 90%;
+    left: 80%;
+    width: 200px;
+    height: 30px;
+    border: none;
+    z-index: 1;
+    background-color: #5b4fff;
+    color: #fff;
+    transition: 0.5s ease;
+
+    &:hover {
+      background-color: #4faaff;
+      transform: scaleX(1.2);
+    }
+  }
+  .remove {
+    position: sticky;
+    z-index: 1;
+    top: 90%;
+    left: 60%;
+    width: 200px;
+    height: 30px;
+    border: none;
+    color: #fff;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: scaleX(1.2);
+    }
+  }
+
+  div {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    position: relative;
+    flex-flow: column;
+    border-bottom: 1px solid white;
+
+    img {
+      width: 300px;
+      height: 100%;
+    }
+    p {
+      color: #fff;
+    }
+    p,
+    button {
+      position: absolute;
+    }
+    .heart {
+      display: none;
+    }
+
+    #price-tag {
+      left: 35%;
+      top: 60%;
+      font-size: 20px;
+    }
+    .name {
+      top: -250%;
+      left: 30%;
+      font-size: 30px;
+    }
+    button {
+      top: 80%;
+      left: 32%;
+      width: 200px;
+      height: 30px;
+      border: none;
+      background-color: #ff0;
+      cursor: pointer;
+    }
+    span {
+      display: none;
+    }
+  }
+}

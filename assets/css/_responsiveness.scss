@@ -1,0 +1,8 @@
+@media screen and (max-width: 800px) {
+  .body {
+    .box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
